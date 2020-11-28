@@ -1,0 +1,3 @@
+D:/qt/project/client/cmake-build-debug-mingw/CMakeFiles/client.dir
+D:/qt/project/client/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
+D:/qt/project/client/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir

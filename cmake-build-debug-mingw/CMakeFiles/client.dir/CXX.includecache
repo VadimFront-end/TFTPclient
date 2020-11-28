@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/qt/project/client/client.h
+winsock2.h
+-
+iostream
+-
+
+D:/qt/project/client/main.cpp
+client.h
+D:/qt/project/client/client.h
+fstream
+-
+

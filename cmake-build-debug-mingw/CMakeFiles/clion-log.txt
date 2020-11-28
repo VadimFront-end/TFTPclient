@@ -1,0 +1,4 @@
+"D:\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=D:/qt/Tools/mingw730_32/bin/gcc.exe -DCMAKE_CXX_COMPILER=D:/qt/Tools/mingw730_32/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" D:\qt\project\client
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/qt/project/client/cmake-build-debug-mingw
