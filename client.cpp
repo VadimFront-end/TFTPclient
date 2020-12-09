@@ -35,14 +35,27 @@ client & client::operator >>(int &oper2) {
 
 
 bool client::start() {
-    WSAStartup(MAKEWORD(1,0),&wData);
-    sock=socket(AF_INET,SOCK_STREAM,0);
-    address.sin_family=AF_INET;
-    address.sin_port=1024;
-    address.sin_addr.s_addr=inet_addr("127.0.0.1");
-    //посылаем запрос на соединение в серверное гнездо(пока не установим соединение)
-    while (connect(sock,(struct sockaddr *)&address,sizeof(address)));
-    return true;
+    WSAStartup(MAKEWORD(2,2),&wData);
+        sock=socket(AF_INET,SOCK_STREAM,0);
+        address.sin_family=AF_INET;
+        address.sin_port=8008;
+        address.sin_addr.s_addr=inet_addr("127.0.0.1");
+        //посылаем запрос на соединение в серверное гнездо(пока не установим соединение)
+
+        std::string port = "21";
+        std::string host = "172.20.10.2";
+        struct addrinfo hints;
+        struct addrinfo* servinfo;
+
+        memset(&hints, 0, sizeof hints);
+        hints.ai_family = AF_UNSPEC;
+        hints.ai_socktype = SOCK_STREAM;
+        hints.ai_flags = AI_PASSIVE;
+        getaddrinfo(host.c_str(), port.c_str(), &hints, &servinfo);
+
+        while (connect(sock,servinfo->ai_addr, servinfo->ai_addrlen));
+        printf("Connected\n");
+        return true;
 }
 
 bool client::sendMassage(const char *mass) {
